@@ -1,19 +1,60 @@
 var app = angular.module('MobileAngularUiExamples', [
-  "ngRoute",
+  "ui.router",
+  //"ngRoute",
   "mobile-angular-ui",
   "mobile-angular-ui.touch",
   "mobile-angular-ui.scrollable"
 ]);
 
-app.config(function($routeProvider, $locationProvider) {
-  $routeProvider.when('/',          {templateUrl: "home.html"});
+app.config(function($stateProvider, $urlRouterProvider) {
+  //app.config(function($routeProvider, $locationProvider) {
+ 
+  //
+  // Now set up the states
+  $stateProvider
+    .state('home', {
+      url: "/",
+      templateUrl: "home.html"
+    })
+    .state('scroll', {
+      url: "/scroll",
+      templateUrl: "scroll.html"
+    })
+    .state('toggle', {
+      url: "/toggle",
+      templateUrl: "toggle.html"
+    })
+    .state('tabs', {
+      url: "/tabs",
+        templateUrl: "tabs.html"
+    })
+    .state('accordion', {
+      url: "/accordion",
+        templateUrl: "accordion.html"
+    })
+    .state('overlay', {
+      url: "/overlay",
+        templateUrl: "overlay.html"
+    })
+    .state('forms', {
+      url: "/forms",
+        templateUrl: "forms.html"
+    })
+    .state('carousel', {
+      url: "/carousel",
+        templateUrl: "carousel.html"
+    });
+
+    //$urlRouterProvider.otherwise("/");
+
+  /*$routeProvider.when('/',          {templateUrl: "home.html"});
   $routeProvider.when('/scroll',    {templateUrl: "scroll.html"}); 
   $routeProvider.when('/toggle',    {templateUrl: "toggle.html"}); 
   $routeProvider.when('/tabs',      {templateUrl: "tabs.html"}); 
   $routeProvider.when('/accordion', {templateUrl: "accordion.html"}); 
   $routeProvider.when('/overlay',   {templateUrl: "overlay.html"}); 
   $routeProvider.when('/forms',     {templateUrl: "forms.html"});
-  $routeProvider.when('/carousel',  {templateUrl: "carousel.html"});
+  $routeProvider.when('/carousel',  {templateUrl: "carousel.html"});*/
 });
 
 app.service('analytics', [

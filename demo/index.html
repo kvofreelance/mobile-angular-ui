@@ -13,7 +13,7 @@ to see this page in browser
 
 <head>
   <meta charset="utf-8" />
-  <base href="/demo/" />
+  <base href="" />
   <title>Mobile Angular UI Examples</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -29,7 +29,8 @@ to see this page in browser
   <link rel="stylesheet" href="examples.css" />
 
   <script src="assets/js/angular.min.js"></script>
-  <script src="assets/js/angular-route.min.js"></script>
+  <!--<script src="assets/js/angular-route.min.js"></script>-->
+  <script src="assets/js/angular-ui-route.js"></script>
   <script src="assets/js/mobile-angular-ui.min.js"></script>
   <script src="assets/js/mobile-angular-ui-touch-fastclick.min.js"></script>
   <script src="assets/js/mobile-angular-ui-scrollable-overthrow.min.js"></script>
@@ -87,7 +88,8 @@ to see this page in browser
         <div ng-show="loading" class="app-content-loading">
           <i class="fa fa-spinner fa-spin loading-spinner"></i>
         </div>
-        <ng-view class="app-content" ng-hide="loading"></ng-view>
+        <div ui-view class="app-content" ng-hide="loading"></div>
+        <!--<ng-view class="app-content" ng-hide="loading"></ng-view>-->
       </div>
     </div>
 
